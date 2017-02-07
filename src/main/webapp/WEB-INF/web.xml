@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-  <display-name>ProjectOne</display-name>
+  <display-name>FrontController</display-name>
   <welcome-file-list>
-    <welcome-file>Login.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-
-  <!-- MAP MASTER SERVLET -->
-  
   <servlet>
-  	<servlet-name>MasterAlias</servlet-name>
-  	<servlet-class>com.revature.servlets.MasterServlet</servlet-class>
+    <servlet-name>master</servlet-name>
+    <servlet-class>com.revature.web.MasterServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>MasterAlias</servlet-name>
-  	<url-pattern>/master.do</url-pattern>
+    <servlet-name>master</servlet-name>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
-  
-  <!-- MAP Authorize Filter Filter -->
-  <filter>
-  	<filter-name>AuthenticateAlias</filter-name>
-  	<filter-class>com.revature.filter.AuthenticateFilter</filter-class>
-  </filter>
-  
-  <filter-mapping>
-  	<filter-name>AuthenticateAlias</filter-name>
-  	<url-pattern>*.do</url-pattern>
-  </filter-mapping>
-  
-    <!-- MAP Authorize Filter Filter -->
-  <filter>
-  	<filter-name>AuthorizeAlias</filter-name>
-  	<filter-class>com.revature.filter.AuthorizeFilter</filter-class>
-  </filter>
-  
-  <filter-mapping>
-  	<filter-name>AuthorizeAlias</filter-name>
-  	<url-pattern>*.jsp</url-pattern>
-  </filter-mapping>
-  
 </web-app>
