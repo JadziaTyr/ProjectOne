@@ -52,9 +52,7 @@ public class ReimbursementDAO extends DAO
 			ResultSet rs =  statement.executeQuery();
 
 			while(rs.next())
-			{
-				
-				
+			{			
 				person.getReimbursementList().add(new Reimbursement(rs.getInt("r_id"), 
 						                   	      rs.getDouble("r_amount"), 
 						                          rs.getString("r_description"),

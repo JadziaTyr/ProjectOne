@@ -76,7 +76,7 @@ public class TransactionService
 		{
 			dao = new UserDAO();
 
-			return ((UserDAO) dao).retrievePersonByUsername(person, conn);
+			return ((UserDAO) dao).retrievePersonByUsernameAndPassword(person, conn);
 		}
 		catch (SQLException ex)
 		{
@@ -229,9 +229,7 @@ public class TransactionService
 			{
 				return false;
 			}
-
-			System.out.println("After retrieve reimbursements");
-			
+						
 			dao = new UserDAO();
 			for (int i = 0; i < list.size(); i++)
 			{

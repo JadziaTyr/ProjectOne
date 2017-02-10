@@ -69,7 +69,7 @@ public class UserDAO extends DAO
 	
 	//Purpose: to retrieve the person with the provided username
 	//Tested and Works
-	public boolean retrievePersonByUsername(User person, Connection conn)
+	public boolean retrievePersonByUsernameAndPassword(User person, Connection conn)
 	{
 		try
 		{
@@ -90,8 +90,9 @@ public class UserDAO extends DAO
 				person.setPassword(rs.getString("u_password"));
 				person.setEmail(rs.getString("u_email"));
 				person.setPersonRole(new Role(rs.getInt("ur_id"), ""));
+				return true;
 			}
-			return true;
+			return false;
 		}
 		catch(SQLException ex)
 		{
@@ -152,7 +153,6 @@ public class UserDAO extends DAO
 				person.setEmail(rs.getString("u_email"));
 				person.setPersonRole(new Role(rs.getInt("ur_id"), ""));
 			}
-			
 			return true;
 		}
 		catch(SQLException ex)

@@ -16,9 +16,16 @@ import java.sql.Savepoint;
 
 public abstract class DAO
 {
+	/*- local DB
 	//the pieces to connect to the database
 	public static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
 	public static final String USERNAME = "reembursement_db";
+	public static final String PASSWORD = "p4ssw0rd";
+	*/
+	
+	//online
+	public static final String URL = "jdbc:oracle:thin:@reimbursement.ckoyfwk648zi.us-east-1.rds.amazonaws.com:1521:ORCL";
+	public static final String USERNAME = "JadziaTyr";
 	public static final String PASSWORD = "p4ssw0rd";
 	
 	//a restore point in case a transaction goes awry

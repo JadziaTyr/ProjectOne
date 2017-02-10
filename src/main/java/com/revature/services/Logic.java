@@ -77,11 +77,8 @@ public class Logic
 
 	public boolean retrieveAllReimbursements(List<Reimbursement> list)
 	{
-		System.out.println("in logic before transaction");
 		if (new TransactionService().fetchReimbursementList(list))
 		{
-			System.out.println("in logic after transaction");
-
 			int lcv = 0;
 			while (lcv < list.size())
 			{
@@ -229,12 +226,10 @@ public class Logic
 		user.setEmail(email);
 		if(new TransactionService().fetchUserByEmail(user))
 		{
-			System.out.println(user.getId());
 			user.setUserName(this.getRandomString(10));
 			user.setPassword(this.getRandomString(8));
 			if(new TransactionService().updatePersonTransaction(user))
 			{
-				System.out.println("updated");
 				(new Thread(new UserRunnable(user))).start();
 				return true;
 			}
