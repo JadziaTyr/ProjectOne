@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.revature.services.Logic;
+
 public class MasterServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
@@ -16,7 +18,7 @@ public class MasterServlet extends HttpServlet
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		System.out.println("Implement GET - MASTER");
-		
+		Logic.getLogic().refreshLookUpTables();
 		String page = new ServletAssistant().correctInsecureNavigation(req, resp);
 				
 		if(page != null)
@@ -29,7 +31,8 @@ public class MasterServlet extends HttpServlet
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		System.out.println("Implement POST - MASTER");
-				
+		Logic.getLogic().refreshLookUpTables();
+
 		String page = new ServletAssistant().correctHomepage(req, resp);
 				
 		HttpSession session = req.getSession();

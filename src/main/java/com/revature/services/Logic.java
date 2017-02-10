@@ -31,11 +31,15 @@ public class Logic
 		statusList = new ArrayList<ReimbursementStatus>();
 		roleList = new ArrayList<Role>();
 		RANDOM = new Random();
-		readLookUpTables(typeList, statusList, roleList);
+		readLookUpTables();
+	}
+	
+	public void refreshLookUpTables()
+	{
+		new TransactionService().initialReadTransaction(typeList, statusList, roleList);
 	}
 
-	private void readLookUpTables(List<ReimbursementType> typeList, List<ReimbursementStatus> statusList,
-			List<Role> roleList)
+	private void readLookUpTables()
 	{
 		new TransactionService().initialReadTransaction(typeList, statusList, roleList);
 	}
