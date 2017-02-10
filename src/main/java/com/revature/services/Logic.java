@@ -36,6 +36,9 @@ public class Logic
 	
 	public void refreshLookUpTables()
 	{
+		typeList.clear();
+		statusList.clear();
+		roleList.clear();
 		new TransactionService().initialReadTransaction(typeList, statusList, roleList);
 	}
 
