@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+C:\Users\deada\my_git_repos\ProjectOne\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3006720217.index
+1019622450.index
+2407904087.index
+3775247395.index
+2732656495.index
+2808044063.index
+269629623.index
