@@ -80,7 +80,7 @@
 												<c:when
 													test="${re.getReimbursementStatus().getStatus() == 'Pending'}">
 													<td><select name="${re.getId()}" class="blue img-rounded">
-															<c:forEach items="${Logic.getLogic().getStatusList()}"
+															<c:forEach items="${statusList}"
 																var="status">
 																<option value="${status.getStatus()}">
 																	${status.getStatus()}</option>

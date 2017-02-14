@@ -275,6 +275,7 @@ public class ServletAssistant
 		{
 			System.out.println("after retrieval");
 			req.getSession().setAttribute("reimbursementList", list);
+			req.getSession().setAttribute("statusList", Logic.getLogic().getStatusList());
 			return "ViewAllRequests.jsp"; // link to servlet instead
 		}
 		return "error.html";
